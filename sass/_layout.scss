@@ -1,0 +1,173 @@
+// Navbar
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: $color-white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: none; // hidden on mobile
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    background: $color-white;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+  display: flex;
+}
+
+  .btn {
+    display: none; // hide main CTA on mobile
+  }
+
+  // Hamburger menu (mobile only)
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 26px;
+    background: none;
+    border: none;
+  }
+
+  // Tablet & Desktop
+  @media (min-width: $breakpoint-tablet) {
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      position: static;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .btn {
+      display: inline-block;
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+// Hero
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+  padding: 60px 5%;
+
+  .hero-img img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    min-height: 90vh;
+    padding: $spacing-section 10%;
+
+    .hero-text {
+      align-self: center;
+    }
+  }
+}
+
+// Services
+.services {
+  .service-cards {
+    grid-template-columns: 1fr; // stack cards on mobile
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    .service-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// About
+.about {
+  text-align: center;
+  @media (min-width: $breakpoint-tablet) {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+// Contact
+.staff-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+
+  h3 {
+    grid-column: 1 / -1; // make the title span full width
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .staff-member {
+    background: $color-light;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    text-align: center;
+
+    p {
+      margin: 5px 0;
+    }
+
+    a {
+      color: $color-accent;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Contact form below staff
+.contact-form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+
+  form {
+    background: $color-light;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
