@@ -66,6 +66,12 @@ section {
     font-weight: bold;
 }
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 25px;  /* shrink logo on tablet/mobile */
+    }
+}
+
 .navbar .nav-links {
     display: none;
     flex-direction: column;
@@ -147,6 +153,14 @@ section {
 
     .hero .hero-text {
         align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .hero-text {
+        align-self: center;
+        margin-top: 90px; 
+        
     }
 }
 
